@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grade calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-xxl  main">
+            <div class="container">
+                <div class="form-control fadeInUp  px-3 border rounded bg-transparent">
+                    <div class="row text-uppercase  py-5 justify-content-center px-3  border rounded primary">
+                        <div class="col-lg-5 display-3 mt-5 fw-bold text h-50">
+                            grade calculator  
+                        </div>
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="mb-3">
+                                  <label  class="form-label">English</label>
+                                  <input type="text" class="form-control  " id="sub-1" >
+                                  
+                                <div class="mb-3">
+                                  <label  class="form-label">Hindi</label>
+                                  <input type="text" class="form-control" id="sub-2">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Maths</label>
+                                    <input type="text" class="form-control" id="sub-3">
+                                  </div>
+                                
+                                  <div class="mb-3">
+                                    <label class="form-label">Science</label>
+                                    <input type="text" class="form-control" id="sub-4">
+                                  </div>
+                                
+                                  <div class="mb-3">
+                                    <label  class="form-label">Social Science</label>
+                                    <input type="text" class="form-control" id="sub-5">
+                                  </div>
+                                  
+                                <button type="button" class="btn btn-primary" onclick="calcy()">Submit</button>
+                              </form>
+                           </div>
+                        </div>
+                        <div class="showdata text-dark fw-bold">
+                            <p id="showData"></p>
+                        </div>
+                        
+                        </div>
+                       
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const calcy =()=>{
+    let eng=document.getElementById('sub-1').value;
+    let hin=document.getElementById('sub-2').value;
+    let math=document.getElementById('sub-3').value;
+    let sci=document.getElementById('sub-4').value;
+    let sst=document.getElementById('sub-5').value;
+    let grade="";
+     
+    let total= parseFloat(eng)+parseFloat(hin)+parseFloat(math)+parseFloat(sci)+parseFloat(sst);
+    let percent = (total/500)*100;
+    if(percent<=100 && percent>=80){
+        grade='A';
+    }else if(percent<=79 && percent>=60){
+        grade='B';
+    }else if(percent<=59 && percent>=40){
+        grade='C';
+    }else{
+        grade='D';
+    }
+
+    document.getElementById('showData').innerHTML= `Your Grand Total is <span class="imp"> ${total} </span> and Percentage is  <span class="imp"> ${percent}</span>%. <br>Your Grade is  <span class="imp"> ${grade}</span>.`;
+   
+}
+    </script>
+</body>
+</html>

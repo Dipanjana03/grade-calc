@@ -1,0 +1,29 @@
+.subject{
+    width: 300px !important;;
+    height: 70px;
+}
+.main{
+    padding-top:55px !important;
+    background: none;
+}
+.wrapper{
+    background: url(1.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+.form-control{
+    background-color: rgba(8, 13, 24, 0.409);
+    backdrop-filter: blur(10px);
+}
+.imp{
+    color:rgb(19, 151, 194);
+}
+.text{
+    font-family: heebo;
+
+}
+.text:hover{
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
